@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\Uni\\Game\\HWs\\HW3\\PepsiManProject\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C08789A5-610F-45D3-F43E-4E9935243F73}|Assembly-CSharp.csproj|d:\\uni\\game\\hws\\hw3\\pepsimanproject\\assets\\scripts\\obstaclespawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C08789A5-610F-45D3-F43E-4E9935243F73}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\obstaclespawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C08789A5-610F-45D3-F43E-4E9935243F73}|Assembly-CSharp.csproj|d:\\uni\\game\\hws\\hw3\\pepsimanproject\\assets\\scripts\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C08789A5-610F-45D3-F43E-4E9935243F73}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -19,6 +23,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ObstacleSpawner.cs",
+              "DocumentMoniker": "D:\\Uni\\Game\\HWs\\HW3\\PepsiManProject\\Assets\\Scripts\\ObstacleSpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ObstacleSpawner.cs",
+              "ToolTip": "D:\\Uni\\Game\\HWs\\HW3\\PepsiManProject\\Assets\\Scripts\\ObstacleSpawner.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ObstacleSpawner.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-25T18:10:17.805Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "PlayerMovement.cs",
               "DocumentMoniker": "D:\\Uni\\Game\\HWs\\HW3\\PepsiManProject\\Assets\\Scripts\\PlayerMovement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerMovement.cs",
