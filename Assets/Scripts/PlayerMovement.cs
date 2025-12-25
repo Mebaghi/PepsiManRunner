@@ -9,8 +9,12 @@ public class PlayerMovement : MonoBehaviour
     public float laneDistance = 2.5f;
     public float laneChangeSpeed = 10f;
 
-    private int currentLane = 1; // 0 = left, 1 = middle, 2 = right
+    // 0 = left, 1 = middle, 2 = right
+    private int currentLane = 1;
     private float targetX;
+
+    // Game Over flag
+    private bool isDead = false;
 
     void Start()
     {
@@ -19,10 +23,14 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        // اگر بازی تمام شده، هیچ حرکتی انجام نده
+        if (isDead)
+            return;
+
         // حرکت خودکار رو به جلو
         transform.Translate(Vector3.forward * forwardSpeed * Time.deltaTime);
 
-        // ورودی چپ و راست
+        // ورودی چپ / راست
         if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             ChangeLane(-1);
@@ -42,5 +50,14 @@ public class PlayerMovement : MonoBehaviour
     {
         currentLane = Mathf.Clamp(currentLane + direction, 0, 2);
         targetX = (currentLane - 1) * laneDistance;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Obstacle"))
+        {
+            isDead = true;
+            Debug.Log("Game Over");
+        }
     }
 }
