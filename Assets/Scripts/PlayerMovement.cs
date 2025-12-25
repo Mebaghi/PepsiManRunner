@@ -13,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
     private int currentLane = 1;
     private float targetX;
 
-    // Game Over flag
     private bool isDead = false;
 
     void Start()
@@ -23,14 +22,13 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        // اگر بازی تمام شده، هیچ حرکتی انجام نده
         if (isDead)
             return;
 
-        // حرکت خودکار رو به جلو
+        // حرکت رو به جلو
         transform.Translate(Vector3.forward * forwardSpeed * Time.deltaTime);
 
-        // ورودی چپ / راست
+        // ورودی چپ و راست
         if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             ChangeLane(-1);
@@ -40,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
             ChangeLane(1);
         }
 
-        // حرکت نرم به سمت لاین هدف
+        // حرکت نرم بین لاین‌ها
         Vector3 pos = transform.position;
         pos.x = Mathf.Lerp(pos.x, targetX, laneChangeSpeed * Time.deltaTime);
         transform.position = pos;
@@ -57,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
         if (other.CompareTag("Obstacle"))
         {
             isDead = true;
-            Debug.Log("Game Over");
+            GameManager.Instance.GameOver();
         }
     }
 }
