@@ -2,7 +2,7 @@
 
 public class ObstacleSpawner : MonoBehaviour
 {
-    public GameObject obstaclePrefab;
+    public GameObject[] obstacles;   // ← این باعث میشه Array ببینی
     public Transform player;
 
     [Header("Lane Settings")]
@@ -10,8 +10,8 @@ public class ObstacleSpawner : MonoBehaviour
 
     [Header("Spawn Settings")]
     public float spawnAheadDistance = 25f;
-    public float minGap = 3f;
-    public float maxGap = 7f;
+    public float minGap = 7f;
+    public float maxGap = 12f;
 
     private float nextSpawnZ;
 
@@ -22,10 +22,6 @@ public class ObstacleSpawner : MonoBehaviour
 
     void Update()
     {
-        // اگر بازی تمام شده، مانع جدید نساز
-        if (player == null)
-            return;
-
         if (player.position.z + spawnAheadDistance >= nextSpawnZ)
         {
             SpawnObstacle();
@@ -35,10 +31,13 @@ public class ObstacleSpawner : MonoBehaviour
 
     void SpawnObstacle()
     {
-        int laneIndex = Random.Range(0, 3); // 0,1,2
+        int laneIndex = Random.Range(0, 3);
         float xPos = (laneIndex - 1) * laneDistance;
 
-        Vector3 spawnPosition = new Vector3(xPos, 0.5f, nextSpawnZ);
-        Instantiate(obstaclePrefab, spawnPosition, Quaternion.identity);
+        int randomIndex = Random.Range(0, obstacles.Length);
+        GameObject chosenObstacle = obstacles[randomIndex];
+
+        Vector3 spawnPos = new Vector3(xPos, 0.5f, nextSpawnZ);
+        Instantiate(chosenObstacle, spawnPos, Quaternion.identity);
     }
 }
