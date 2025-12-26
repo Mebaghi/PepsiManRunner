@@ -1777,5 +1777,5 @@ MonoBehaviour:
   player: {fileID: 1221824812}
   laneDistance: 2.5
   spawnAheadDistance: 25
-  minGap: 7
-  maxGap: 12
+  minGap: 3
+  maxGap: 7
